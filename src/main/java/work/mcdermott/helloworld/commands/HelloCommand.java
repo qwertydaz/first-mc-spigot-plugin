@@ -10,6 +10,10 @@ import work.mcdermott.helloworld.Main;
 
 import java.util.Objects;
 
+import static work.mcdermott.helloworld.constant.MCPluginConsts.HELLO_MESSAGE;
+import static work.mcdermott.helloworld.constant.MCPluginConsts.NO_PERMISSION;
+import static work.mcdermott.helloworld.constant.MCPluginConsts.PLAYER_ONLY;
+
 public class HelloCommand implements CommandExecutor {
 
 	public HelloCommand(Main plugin) {
@@ -26,23 +30,24 @@ public class HelloCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label,
                              @NotNull String[] args) {
-        if (!senderIsPermitted(sender)) {
-            return false;
-        }
+        if (!senderIsPermitted(sender)) return false;
 
         Player player = (Player) sender;
-        player.sendMessage("Hello World!");
+
+        String playerName = player.getDisplayName();
+        String message = String.format(HELLO_MESSAGE, playerName);
+        player.sendMessage(message);
 
         return true;
     }
 
     private boolean senderIsPermitted(CommandSender sender) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players may execute this command.");
+            sender.sendMessage(PLAYER_ONLY);
             return false;
         }
         if (!sender.hasPermission("hello.use")) {
-            sender.sendMessage("You do not have permission to execute this command.");
+            sender.sendMessage(NO_PERMISSION);
             return false;
         }
 

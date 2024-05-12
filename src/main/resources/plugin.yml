@@ -6,5 +6,6 @@ description: My first Minecraft spigot plugin.
 
 commands:
   hello:
-    aliases: [hi]
+    aliases:
+      - hi
     description: This is the hello command.
