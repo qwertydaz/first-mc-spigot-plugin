@@ -1,8 +1,8 @@
 package work.mcdermott.helloworld.constant;
 
-public class MCPluginConsts
+public class HelloWorldConsts
 {
-	private MCPluginConsts() {}
+	private HelloWorldConsts() {}
 
 	// CHAT MESSAGE TEMPLATES
 	public static final String HELLO_MESSAGE = "Hello %s!";

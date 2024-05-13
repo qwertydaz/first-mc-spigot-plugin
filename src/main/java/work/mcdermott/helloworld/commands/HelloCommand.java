@@ -10,9 +10,9 @@ import work.mcdermott.helloworld.Main;
 
 import java.util.Objects;
 
-import static work.mcdermott.helloworld.constant.MCPluginConsts.HELLO_MESSAGE;
-import static work.mcdermott.helloworld.constant.MCPluginConsts.NO_PERMISSION;
-import static work.mcdermott.helloworld.constant.MCPluginConsts.PLAYER_ONLY;
+import static work.mcdermott.helloworld.constant.HelloWorldConsts.HELLO_MESSAGE;
+import static work.mcdermott.helloworld.constant.HelloWorldConsts.NO_PERMISSION;
+import static work.mcdermott.helloworld.constant.HelloWorldConsts.PLAYER_ONLY;
 
 public class HelloCommand implements CommandExecutor {
 
